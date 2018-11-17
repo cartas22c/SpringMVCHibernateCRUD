@@ -30,9 +30,11 @@ public class Cliente {
 	private Date fechaSalida;
 	private String sexo;
 	
+	
 	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name = "idCliente")
+	@JoinColumn(name = "idCT")
 	private CentroTuristico centro;
+	
 
 	@OneToMany(cascade= CascadeType.ALL)
 	@JoinColumn(name="idCliente")
@@ -157,6 +159,8 @@ public class Cliente {
 		this.telefonos = telefonos;
 	}
 
+
+	 
  
 
 

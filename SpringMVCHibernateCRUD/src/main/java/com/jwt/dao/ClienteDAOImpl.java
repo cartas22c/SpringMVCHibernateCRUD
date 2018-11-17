@@ -2,13 +2,19 @@ package com.jwt.dao;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.jwt.model.Cliente;
 
-  
+@Transactional
+@Repository  
 public class ClienteDAOImpl implements ClienteDAO{
+	@Autowired
 	private SessionFactory sessionFactory;
 
 
@@ -39,7 +45,7 @@ public class ClienteDAOImpl implements ClienteDAO{
 		// TODO Auto-generated method stub
 		Session session = this.sessionFactory.getCurrentSession();
 		@SuppressWarnings("unchecked")
-		List<Cliente> clientesList = session.createQuery("from Cliente").list();
+		List<Cliente> clientesList = session.createQuery("from com.jwt.model.Cliente").list();
 	   return clientesList;
 	}
 

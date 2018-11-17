@@ -60,10 +60,14 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
- 
+
 
 	<tx:annotation-driven
 		transaction-manager="transactionManager" />
+
+
+
+
 
 
 	<bean id="usuarioManager"
@@ -72,12 +76,24 @@
 	<bean id="usuarioDAO" class="com.jwt.dao.UsuarioDAOImpl" />
 
 
-<bean id="centroTuristicoManager"
+	<bean id="centroTuristicoManager"
 		class="com.jwt.service.CentroTuristicoManagerImp" />
 
-	<bean id="centroTuristicoDAO" class="com.jwt.dao.CentroTuristicoDAOImpl" />
+	<bean id="centroTuristicoDAO"
+		class="com.jwt.dao.CentroTuristicoDAOImpl" />
+
+
+	<bean id="clienteManager"
+		class="com.jwt.service.ClienteManagerImp" />
+
+	<bean id="clienteDAO" class="com.jwt.dao.ClienteDAOImpl" />
+
 
 
 	<tx:annotation-driven
 		transaction-manager="transactionManager" />
+
+
+
+
 </beans>
