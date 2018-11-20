@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://java.sun.com/jstl/core" prefix="cc"%>
@@ -5,21 +6,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+        rel="stylesheet">
 <meta charset="ISO-8859-1">
   <!-- Site made with Mobirise Website Builder v4.8.7, https://mobirise.com -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Mobirise v4.8.7, mobirise.com">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="assetsListado/images/logo4.png" type="image/x-icon">
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/assetsListado/images/logo4.png" type="image/x-icon">
   <meta name="description" content="">
-  <link rel="stylesheet" href="assetsListado/assetsListado/tether/tether.min.css">
-  <link rel="stylesheet" href="assetsListado/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assetsListado/bootstrap/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="assetsListado/bootstrap/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="assetsListado/datatables/data-tables.bootstrap4.min.css">
-  <link rel="stylesheet" href="assetsListado/theme/css/style.css">
-  <link rel="stylesheet" href="assetsListado/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assetsListado/${pageContext.request.contextPath}/resources/assetsListado/tether/tether.min.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assetsListado/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assetsListado/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assetsListado/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assetsListado/datatables/data-tables.bootstrap4.min.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assetsListado/theme/css/style.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assetsListado/mobirise/css/mbr-additional.css" type="text/css">
   
 <title>CONSULTA DE RESERVAS</title>
 </head>
@@ -35,9 +38,7 @@
 					<h2
 						class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1">
 						Listado de Reservas</h2>
-					<h3
-						class="mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style display-7">
-						Usuario: ${usuario.login}</h3>
+				
 
 				</div>
 			</div>
@@ -92,19 +93,13 @@
 						</tbody>
 					</table>
 				</div>
-			</div>
+				<br>
+				<a href="login" class="btn btn-info" role="button">Volver a login</a>
+ 			</div>
 		</div>
 	</section>
-
-	<script src="assetsListado/web/assetsListado/jquery/jquery.min.js"></script>
-	<script src="assetsListado/popper/popper.min.js"></script>
-	<script src="assetsListado/tether/tether.min.js"></script>
-	<script src="assetsListado/bootstrap/js/bootstrap.min.js"></script>
-	<script src="assetsListado/smoothscroll/smooth-scroll.js"></script>
-	<script src="assetsListado/parallax/jarallax.min.js"></script>
-	<script src="assetsListado/datatables/jquery.data-tables.min.js"></script>
-	<script src="assetsListado/datatables/data-tables.bootstrap4.min.js"></script>
-	<script src="assetsListado/theme/js/script.js"></script>
+<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="webjars/jquery/1.9.1/jquery.min.js"></script>	 
 </body>
 </html>
 

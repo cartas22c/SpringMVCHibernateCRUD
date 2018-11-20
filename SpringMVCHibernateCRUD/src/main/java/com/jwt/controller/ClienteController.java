@@ -2,6 +2,9 @@ package com.jwt.controller;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,12 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+
 import com.jwt.model.Cliente;
 import com.jwt.service.CentroTuristicoManager;
 import com.jwt.service.ClienteManager;
-import com.jwt.service.UsuarioManager;
-
+ 
 @Controller
+@RequestMapping("admin")
 public class ClienteController {
 	
 	@Autowired
@@ -26,15 +30,7 @@ public class ClienteController {
 	
 	
 
-	public void setCtManager(CentroTuristicoManager ctManager) {
-		this.ctManager = ctManager;
-	}
-
-	public void setClienteManager(ClienteManager clienteManager) {
-		this.clienteManager = clienteManager;
-	}
-
-	@RequestMapping(value = "/admin", method = RequestMethod.GET)
+	@RequestMapping (method=RequestMethod.GET)
 	public String cliente(Model model) { 
 		model.addAttribute("centros", ctManager.listCentros()); 
 		model.addAttribute("cliente", new Cliente()); 
@@ -50,7 +46,11 @@ public class ClienteController {
 
 	}
 	
-	@RequestMapping(value = "/saveCliente", method = RequestMethod.POST)
+	 
+ 
+	
+	
+	@RequestMapping(value = "/admin/saveCliente", method = RequestMethod.POST)
 	public ModelAndView saveEmployee(@ModelAttribute Cliente cliente) {
 		
 		if (cliente.getIdCliente() == 0) { // if employee id is 0 then creating the
@@ -58,6 +58,18 @@ public class ClienteController {
 			clienteManager.addCliente(cliente);
 		}  
 		return new ModelAndView("redirect:/");
+	}
+	
+	
+	// Setters
+
+
+	public void setCtManager(CentroTuristicoManager ctManager) {
+		this.ctManager = ctManager;
+	}
+
+	public void setClienteManager(ClienteManager clienteManager) {
+		this.clienteManager = clienteManager;
 	}
 	
 }
