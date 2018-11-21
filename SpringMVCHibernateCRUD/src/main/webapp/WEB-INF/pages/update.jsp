@@ -59,13 +59,17 @@
 		</div>
 	</section>
 
+
+
+
+
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="title col-12 col-lg-8">
 				<br>
 				<h2
 					class="mbr-section-title align-center pb-3 mbr-fonts-style display-2">
-					Registrar Reserva</h2>
+					Actualiza Reserva</h2>
 			</div>
 		</div>
 	</div>
@@ -115,23 +119,6 @@
 									id="infoApellido2">Solo letras y espacios. Debe comenzar
 									por mayuscula</span>
 
-							</div>
-						</div>
-						<div class="col-md-4 multi-horizontal" data-for="email">
-							<div class="form-group">
-								<label class="form-control-label mbr-fonts-style display-7"
-									for="email">Email</label> <input type="text"
-									class="form-control" name="email" data-form-field="email"
-									required="required" id="email">
-							</div>
-						</div>
-
-						<div class="col-md-4 multi-horizontal" data-for="phone">
-							<div class="form-group">
-								<label class="form-control-label mbr-fonts-style display-7"
-									for="phone-form1-b">Phone</label> <input type="text"
-									class="form-control" name="phone" data-form-field="Phone"
-									id="phone-form1-b" required="required">
 							</div>
 						</div>
 
@@ -191,6 +178,7 @@
 							<label class="form-control-label mbr-fonts-style display-7"
 								for="cts">Seleccione Centro</label> <br>
 							<form:select path="centro">
+							    <form:option value="${cliente.centro.idCT}">${cliente.centro.nombre}</form:option>
 								<form:options items="${centros}" itemValue="idCT"
 									itemLabel="nombre" />
 							</form:select>
@@ -206,70 +194,13 @@
 					</form:form>
 			</div>
 		</div>
-		<br>
-		<br>
-
 	</div>
-
-
 
 	<br>
 	<div class="container scroll"></div>
 
-<section class="section-table cid-r9300cw1CI" id="table1-a">
 
-		<div class="container container-table">
-				
-			<div class="table-wrapper">
 
-				<div class="container scroll">
- 					<table class="table isSearch">
-						<thead>
-							<tr class="table-heads ">
-
-								<th class="head-item mbr-fonts-style display-7">CLIENTE</th>
-								<th class="head-item mbr-fonts-style display-7">PRIMER
-									APELLIDO</th>
-								<th class="head-item mbr-fonts-style display-7">SEGUNDO
-									APELLIDO</th>
-								<th class="head-item mbr-fonts-style display-7">FECHA
-									ENTRADA</th>
-								<th class="head-item mbr-fonts-style display-7">FECHA
-									SALIDA</th>
-								<th class="head-item mbr-fonts-style display-7">CENTRO
-									TURISTICO</th>
-							</tr>
-						</thead>
-
-						<tbody>
-
-							<c:forEach items="${clientes}" var="cliente">
-								<tr>
-				 
-									<td class="body-item mbr-fonts-style display-7"><c:out
-											value="${cliente.nombre}" /></td>
-									<td class="body-item mbr-fonts-style display-7"><c:out
-											value="${cliente.primerApellido}" /></td>
-									<td class="body-item mbr-fonts-style display-7"><c:out
-											value="${cliente.segundoApellido}" /></td>
-									<td class="body-item mbr-fonts-style display-7"><c:out
-											value="${cliente.fechaEntrada}" /></td>
-									<td class="body-item mbr-fonts-style display-7"><c:out
-											value="${cliente.fechaSalida}" /></td>
-									<td class="body-item mbr-fonts-style display-7"><c:out
-											value="${cliente.centro.nombre}" /></td>
-									<td><a href="<c:url value='/edit-${cliente.idCliente}-cliente' />">${cliente.idCliente}</a></td>		
-								</tr>
-							</c:forEach>
-
-						</tbody>
-					</table>
-				</div>
-				<br>
-				<a href="login" class="btn btn-info" role="button">Volver a login</a>
- 			</div>
-		</div>
-	</section>
 
 	<script type="text/javascript" src="js/admin.js"></script>
 	<script

@@ -4,8 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.jwt.dao.CentroTuristicoDAO;
-import com.jwt.dao.ClienteDAO;
+ import com.jwt.dao.ClienteDAO;
 import com.jwt.model.Cliente;
 
  

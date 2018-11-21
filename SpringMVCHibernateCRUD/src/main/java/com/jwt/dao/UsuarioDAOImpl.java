@@ -1,6 +1,7 @@
 package com.jwt.dao;
 
 
+ import java.sql.ResultSet;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -86,7 +87,8 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 		String hql = "FROM com.jwt.model.Usuario WHERE login = :login";
 		Query query = session.createQuery(hql);
 		query.setParameter("login",login);
-		List results = query.list();
+		@SuppressWarnings("unchecked")
+		List<ResultSet> results = query.list();
 		if(!results.isEmpty()) {
 			 p = (Usuario) results.get(0);}
 		else {return null;}

@@ -52,7 +52,7 @@
 			<div class="table-wrapper">
 
 				<div class="container scroll">
- 					<table class="table isSearch" cellspacing="0">
+ 					<table class="table isSearch">
 						<thead>
 							<tr class="table-heads ">
 

@@ -1,14 +1,13 @@
 package com.jwt.controller;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
+ 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -19,7 +18,7 @@ import com.jwt.service.CentroTuristicoManager;
 import com.jwt.service.ClienteManager;
  
 @Controller
-@RequestMapping("admin")
+
 public class ClienteController {
 	
 	@Autowired
@@ -29,25 +28,26 @@ public class ClienteController {
 	private ClienteManager clienteManager;
 	
 	
-
-	@RequestMapping (method=RequestMethod.GET)
+ 	@RequestMapping (value = "admin", method=RequestMethod.GET)
 	public String cliente(Model model) { 
 		model.addAttribute("centros", ctManager.listCentros()); 
+		model.addAttribute("clientes", clienteManager.listClientes()); 
 		model.addAttribute("cliente", new Cliente()); 
 		return "admin"; 
 
 	}
-	
-	
-	@RequestMapping(value = "/listado", method = RequestMethod.GET)
-	public String clientes(Model model) { 
- 		model.addAttribute("clientes", clienteManager.listClientes()); 
-		return "listado"; 
-
-	}
-	
+		
 	 
- 
+
+    @RequestMapping(value = { "/edit-{id}-cliente" }, method = RequestMethod.GET)
+    public String editEmployee(@PathVariable String id, ModelMap model) {
+        Cliente cliente = clienteManager.getUserById(Integer.parseInt(id));
+        model.addAttribute("cliente", cliente);
+		model.addAttribute("centros", ctManager.listCentros()); 
+        model.addAttribute("edit", true);
+        return "update";
+    }	
+	
 	
 	
 	@RequestMapping(value = "/admin/saveCliente", method = RequestMethod.POST)

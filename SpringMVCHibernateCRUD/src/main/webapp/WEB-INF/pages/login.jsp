@@ -16,8 +16,7 @@
 	type="image/x-icon">
 <meta name="description" content="">
 <title>Home</title>
- <link rel="stylesheet"
-	href=${pageContext.request.contextPath}/resources/assets/web/assets/mobirise-icons/mobirise-icons.css">
+ <link rel="stylesheet"	href="${pageContext.request.contextPath}/resources/assets/web/assets/mobirise-icons/mobirise-icons.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/tether/tether.min.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet"

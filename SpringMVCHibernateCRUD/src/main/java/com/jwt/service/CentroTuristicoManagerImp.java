@@ -6,8 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.jwt.dao.CentroTuristicoDAO;
-import com.jwt.dao.EmployeeDAO;
-import com.jwt.model.CentroTuristico;
+ import com.jwt.model.CentroTuristico;
 
 public class CentroTuristicoManagerImp implements CentroTuristicoManager {
 
